@@ -318,7 +318,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     id="layer2"
+     id="topBall"
      inkscape:label="Top Ball"
      style="display:inline">
     <path
@@ -329,7 +329,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     id="layer9"
+     id="welcomeMessage"
      inkscape:label="welcomeMessage"
      style="display:inline">
     <text
@@ -614,7 +614,14 @@
 </svg>
 <script>
 	$(function(){
-	 alert('Hi!');
+	//When the top ball is clicked.....
+	 $('#topBall').click(
+	 function(){
+	 //Fade it out
+	 $('#welcomeMessage').fadeOut();
+	  $(this).fadeOut();
+	 }
+	 );
 	});
 </script>
 </body>
