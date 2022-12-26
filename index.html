@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Magic 8 Ball</title>
 	<style>
-		body{
+		body, #answer{
 		 display:flex;
 		 flex-direction: column;
 		 justify-content:center;
@@ -280,7 +280,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     id="layer10"
+     id="answer"
      inkscape:label="Answer"
      style="display:inline;opacity:0.995475">
     <text
@@ -358,7 +358,7 @@
            style="font-size:11.2889px">your mind of which the </tspan></tspan><tspan
          x="48.380951"
          y="191.84114"><tspan
-           style="font-size:11.2889px">answer is yes or no, Then </tspan></tspan><tspan
+           style="font-size:11.2889px">answer is yes or no, then </tspan></tspan><tspan
          x="48.380951"
          y="205.95227"><tspan
            style="font-size:11.2889px">click this ball</tspan></tspan></text>
@@ -613,13 +613,40 @@
   </g>
 </svg>
 <script>
+    
 	$(function(){
+	
+	//Variables
+	 let randomInt = Math.floor(Math.random() * 5);
+	 var answer = '';
+	
+	
+	//Get the answer based on the number
+	switch(randomInt){
+	 case 1:
+	  answer = 'Yes';
+	  break;
+	 case 2:
+		answer = 'No';
+		break;
+	 case 3:
+	   answer =	'It is likely!';
+	   break;
+	 case 4:
+	   answer = 'It is unlikely!';	
+	   break;
+	 default:
+	   answer = 'Idk. Try again';	
+	}
+	 
+	  
 	//When the top ball is clicked.....
 	 $('#topBall').click(
 	 function(){
-	 //Fade it out
+	 //Fade it out, along with welcome message
 	 $('#welcomeMessage').fadeOut();
 	  $(this).fadeOut();
+	  $("#answer text").text(answer);
 	 }
 	 );
 	});
