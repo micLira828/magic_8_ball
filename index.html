@@ -2,15 +2,18 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Magic 8 Ball</title>
+	<title>Crystal Ball</title>
 	<style>
-		body, #answer{
+		body{
 		 display:flex;
 		 flex-direction: column;
 		 justify-content:center;
 		 align-items: center;
+		 text-align:center;
 		 background-color: #0b0b5dff;
 		}
+		
+		
 	</style>
 	<!--Jquery-->
 	<script src="https://code.jquery.com/jquery-3.6.3.min.js"
@@ -282,7 +285,7 @@
      inkscape:groupmode="layer"
      id="answer"
      inkscape:label="Answer"
-     style="display:inline;opacity:0.995475">
+     style="opacity:0.995475">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.9333px;line-height:1.25;font-family:'Bodoni MT';-inkscape-font-specification:'Bodoni MT, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -624,19 +627,19 @@
 	//Get the answer based on the number
 	switch(randomInt){
 	 case 1:
-	  answer = 'Yes';
+	  answer = 'Yes, its very likely!';
 	  break;
 	 case 2:
-		answer = 'No';
+		answer = 'No, it is unlikely!';
 		break;
 	 case 3:
-	   answer =	'It is likely!';
+	   answer =	'Best find out later!';
 	   break;
 	 case 4:
-	   answer = 'It is unlikely!';	
+	   answer = 'If you try harder...';	
 	   break;
 	 default:
-	   answer = 'Idk. Try again';	
+	   answer = 'Focus & ask again';	
 	}
 	 
 	  
@@ -646,6 +649,8 @@
 	 //Fade it out, along with welcome message
 	 $('#welcomeMessage').fadeOut();
 	  $(this).fadeOut();
+	  
+	  //display the answer
 	  $("#answer text").text(answer);
 	 }
 	 );
